@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Responsive content | time</title>
+  <style media="screen">
+
+    body{
+      font-family: Helvetica, Arial, sans-serif;      
+    }
+
+    .day .str{
+      display: none;
+    }
+
+    .month .str{
+      display: none;
+    }
+
+    .day::after,
+    .month::after{
+      content: "/"
+    }
+
+    .time {
+      display: none;
+    }
+
+    @media (min-width: 30em){
+      .day::after,
+      .month::after{
+        content: ""
+      }
+
+      .time,
+      .month .str{
+        display: inline;
+      }
+
+      .month .num{
+        display: none;
+      }
+    }
+
+    @media (min-width: 40em){
+      .day .str{
+        display: inline;
+      }
+    }
+
+  </style>
+</head>
+<body>
+  <h1>Responsive content: time</h1>
+  <p>
+    Resize the viewport to see the time format adjust.
+  </p>
+
+  <h2>Example</h2>
+
+  <time datetime="2015-05-15 15:00">
+    <span class="day">
+      <span class="str">Sunday,</span>
+      <span class="num">15</span>
+    </span>
+
+    <span class="month">
+      <span class="str">March</span>
+      <span class="num">05</span>
+    </span>
+
+    <span class="year">
+      <span class="num">2015</span>
+    </span>
+
+    <span class="time">
+      3:00 PM
+    </span>
+  </time>
+</body>
+</html>
